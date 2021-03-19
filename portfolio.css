@@ -1,0 +1,293 @@
+/*    --main-white: #f0f0f0;
+    --main-red: #be3144;
+    --main-blue: #45567d;
+    --main-gray: #303841;*/
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+  width: 100vw;
+}
+
+#navbar {
+  text-align: right;
+  background-color: #be3144;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  box-shadow: 1px 1px 1px rgb(24, 24, 24);
+}
+
+ul {
+  color: white;
+  margin: 0 auto;
+  padding-right: 2rem;
+}
+
+li {
+  display: inline-block;
+  font-size: 1.3rem;
+  padding: 0.8rem;
+}
+
+#navbar li:hover {
+  background-color: #45567d;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+#welcome-section {
+  /* vh=viewport height； vw=viewport width */
+  height: 100vh;
+  width: 100vw;
+  /* For browsers that do not support gradients */
+  background-color: rgba(10, 10, 10, 0.85);
+  background-image: linear-gradient
+    (45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85));
+  text-align: center;
+  /*vertical alignment*/
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#welcome-section h1 {
+  font-size: 3.3rem;
+  color: whitesmoke;
+}
+
+#welcome-section p {
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 200;
+  color: #be3144;
+}
+
+#welcome-section #intro {
+  color: whitesmoke;
+  font-size: 1.2rem;
+  font-style: normal;
+  line-height: 2rem;
+  width: 55vw;
+  margin: 0 auto;
+  padding-top: 2.5rem;
+}
+
+#projects {
+  background-color: #45567d;
+  margin: 0 auto;
+  padding: 6rem 0;
+}
+
+h2 {
+  text-align: center;
+  width: 100%;
+  font-size: 2.5rem;
+}
+
+#projects h2,
+#projects hr {
+  color: white;
+}
+
+hr {
+  margin: 0 auto;
+  width: 45vw;
+  min-width: 450px;
+  margin-top: 0.5rem;
+}
+
+#flex-container {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3vw;
+}
+
+#projects img {
+  width: 28vw;
+  height: 24vw;
+  padding-bottom: 2vw;
+}
+
+.project-tile {
+  width: 28vw;
+  height: 28.5vw;
+  background-color: #303841;
+  margin: 2vw auto;
+  text-align: center;
+  box-shadow: 0.1px 0.1px 2px black;
+  border-radius: 3px;
+}
+
+.project-tile a {
+  font-size: 1.3rem;
+}
+
+strong,
+label {
+  visibility: hidden;
+}
+label {
+  display: block;
+  font-size: small;
+  margin: 0.5rem;
+}
+
+/* when hover onproject, it will display </> */
+.project-tile:hover strong,
+.project-tile:hover label {
+  visibility: visible;
+  color: #ff7f50;
+  transition: 0.1s ease-out;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  background-color: #303841;
+  border-style: none;
+  width: 12vw;
+  min-width: 150px;
+  height: 4vw;
+  min-height: 50px;
+  font-size: 1.2rem;
+  border-radius: 2px;
+}
+
+#arrow {
+  visibility: visible;
+  /*before animation, set to be in block*/
+  display: inline-block;
+  /*transform: scale(1.2);*/
+}
+
+button:hover #arrow {
+  animation: moveRight 0.5s ease-in-out 0.1s forwards;
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(5px);
+  }
+}
+
+button:hover {
+  background-color: #be3144;
+  transition: 0.5s ease-in-out;
+}
+
+footer {
+  background-color: #303841;
+  color: white;
+  text-align: center;
+  padding: 8rem 0;
+}
+
+footer h1 {
+  font-size: 4rem;
+}
+
+footer p {
+  font-size: 1.2rem;
+  font-weight: 100;
+  margin-top: 0.7rem;
+  font-style: italic;
+}
+
+footer ul {
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  transform: scale(1.25, 1.25);
+  text-shadow: 1px 1px 2px black;
+}
+
+footer li {
+  font-family: sans-serif;
+  font-weight: 400;
+}
+
+footer li:hover {
+  transform: translateY(8px);
+  transition: 0.5s ease-in-out;
+}
+
+footer hr {
+  width: 100vw;
+  border-color: #be3144;
+  border-width: 2px;
+  border-style: solid;
+}
+
+footer #left,
+footer #right {
+  font-size: 1.2rem;
+  font-weight: 100;
+  font-style: normal;
+  text-align: left;
+  padding: 2rem;
+}
+
+footer #left {
+  float: left;
+  width: 60%;
+}
+
+footer #right {
+  text-align: right;
+  float: right;
+  width: 40%;
+}
+
+@media only screen and (max-width: 1100px) {
+  .project-tile {
+    width: 45vw;
+    height: 45vw;
+    margin: 1vw auto;
+  }
+
+  #projects img {
+    width: 45vw;
+    height: 40vw;
+  }
+
+  footer ul {
+    transform: scale(1.1, 1.1);
+  }
+
+  footer #right {
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 710px) {
+  .project-tile {
+    width: 93vw;
+    height: 93vw;
+  }
+
+  #projects img {
+    width: 93vw;
+    height: 85vw;
+  }
+
+  footer ul {
+    transform: scale(1, 1);
+  }
+
+  footer #left,
+  footer #right {
+    font-size: 1rem;
+  }
+}
